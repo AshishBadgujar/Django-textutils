@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analyze</title>
+    <style>
+        .navbar {
+            background-color: black;
+            padding: 0px 0px;
+            margin: 0px 0px;
+        }
+
+        .navbar ul {
+            display: flex;
+            overflow: auto;
+            list-style: none;
+            padding: 3px 15px
+        }
+
+        .navbar ul li {
+            padding: 7px 16px;
+            margin: 4px -4px;
+
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+
+
+        }
+
+        .navbar ul li input {
+            margin-left: 440px;
+            margin-top: 4px;
+            border-radius: 2px;
+            padding: 5px 4px;
+            border: none;
+            outline: none;
+
+        }
+
+        .navbar ul li .btn {
+            margin-left: 7px;
+            margin-top: 4px;
+            border-radius: 2px;
+            padding: 5px 4px;
+            background-color: #0072ff;
+            color: white;
+            border: none;
+            outline: none;
+
+        }
+
+        .navbar ul li .btn:hover {
+            cursor: pointer;
+            background-color: blue;
+        }
+
+        .full {
+            width: 600px;
+            margin: auto;
+            justify-content: center;
+            padding: 0px 34px;
+
+        }
+
+        /* conatainer */
+        .container {
+            border: 1px solid black;
+            width: 600px;
+            margin: auto;
+            justify-content: center;
+            padding: 0px 34px;
+
+        }
+
+        .addbtn {
+            border-radius: 2px;
+            margin: 18px 0px;
+            padding: 11px 14px;
+            background-color: #0072ff;
+            color: white;
+            border: none;
+            outline: none;
+        }
+
+        .addbtn:hover {
+            cursor: pointer;
+            background-color: blue;
+        }
+        textarea{
+            margin: 0px; 
+            width: 587px; 
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Text Analyze</a></li>
+            <li><a href="#">Home</a></li>
+            <li><input type="text" id="searchText" placeholder="search here"></li>
+            <li><button class="btn">Search</button></li>
+        </ul>
+    </nav>
+
+    <div class="full">
+        <div class="container">
+                <h1>Enter your text below</h1>
+                <form action="/analyze" method="post"> {% csrf_token %}
+                    <textarea name="text" id="" cols="30" rows="10"></textarea>
+                    <input type="checkbox" name="removepunc">Remove punctuation<br>
+                    <input type="checkbox" name="capital">Capitalize the string <br>
+                    <input type="checkbox" name="removeline">Remove line<br>
+                    <button type="submit" class="addbtn">Analize text</button>
+                </form>
+        </div>
+    </div>
+</body>
+
+</html>
